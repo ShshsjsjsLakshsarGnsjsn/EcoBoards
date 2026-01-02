@@ -59,7 +59,7 @@ const ProductShowcase: React.FC = () => {
             <button
               key={c}
               onClick={() => setFilter(c)}
-              className={`px-5 py-2 lg:px-8 lg:py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${filter === c ? 'bg-[#4b7947] text-white shadow-lg' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+              className={`px-5 py-2 lg:px-8 lg:py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${filter === c ? 'bg-[#4b7947] text-white shadow-lg scale-105' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
             >
               {c}
             </button>
@@ -70,14 +70,15 @@ const ProductShowcase: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
         {filteredProducts.map((p) => (
           <div key={p.id} className="group animate-fadeIn cursor-pointer" onClick={() => setSelectedProduct(p)}>
-            <div className="relative aspect-[4/5] rounded-[2rem] lg:rounded-[3rem] overflow-hidden border border-slate-100 shadow-sm transition-all group-hover:shadow-2xl bg-white">
+            <div className="relative aspect-[4/5] rounded-[2rem] lg:rounded-[3rem] overflow-hidden border border-slate-100 shadow-sm transition-shadow duration-300 group-hover:shadow-2xl bg-white will-change-transform">
               <img 
                 src={p.img} 
                 alt={p.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 will-change-transform" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  // Fallback if image fails
                   target.src = 'https://placehold.co/600x800/f0f4f0/4b7947?text=Ecoboards'; 
                 }}
               />
@@ -87,18 +88,18 @@ const ProductShowcase: React.FC = () => {
             </div>
             <div className="mt-6 lg:mt-8 text-center">
               <span className="text-[10px] font-black text-[#8cc63f] uppercase tracking-[0.2em] mb-2 block">{p.cat}</span>
-              <h4 className="text-lg lg:text-xl font-bold text-slate-800 mb-2">{p.title}</h4>
+              <h4 className="text-lg lg:text-xl font-bold text-slate-800 mb-2 group-hover:text-[#4b7947] transition-colors">{p.title}</h4>
             </div>
           </div>
         ))}
       </div>
 
       {selectedProduct && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity">
           <div className="bg-white w-full max-w-4xl rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl relative flex flex-col md:flex-row animate-fadeIn max-h-[90vh] overflow-y-auto md:overflow-hidden">
             <button 
               onClick={() => setSelectedProduct(null)}
-              className="absolute top-4 right-4 lg:top-6 lg:right-6 w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all z-10 shadow-md"
+              className="absolute top-4 right-4 lg:top-6 lg:right-6 w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors z-10 shadow-md"
             >
               <i className="fa-solid fa-xmark"></i>
             </button>
@@ -113,7 +114,7 @@ const ProductShowcase: React.FC = () => {
                </p>
                <button 
                  onClick={() => handleInquiry(selectedProduct.title)}
-                 className="w-full bg-[#4b7947] text-white py-3 lg:py-4 rounded-xl lg:rounded-2xl font-black uppercase tracking-widest text-[10px] lg:text-xs hover:bg-[#8cc63f] transition-all"
+                 className="w-full bg-[#4b7947] text-white py-3 lg:py-4 rounded-xl lg:rounded-2xl font-black uppercase tracking-widest text-[10px] lg:text-xs hover:bg-[#8cc63f] transition-colors"
                >
                  Inquire on WhatsApp
                </button>

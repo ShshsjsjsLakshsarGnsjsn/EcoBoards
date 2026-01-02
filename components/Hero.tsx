@@ -41,19 +41,27 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative h-[550px] lg:h-[750px] overflow-hidden group bg-slate-900">
+    <div className="relative h-[550px] lg:h-[750px] overflow-hidden group bg-slate-900 contain-content">
       {HERO_SLIDES.map((slide, index) => (
         <div 
           key={index}
-          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'}`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out will-change-[opacity,transform] ${index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
         >
           <div className="absolute inset-0">
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+            <img 
+              src={slide.image} 
+              alt={slide.title} 
+              className={`w-full h-full object-cover transition-transform duration-[6000ms] ease-linear will-change-transform ${index === current ? 'scale-105' : 'scale-100'}`}
+              loading={index === 0 ? "eager" : "lazy"}
+              // @ts-ignore
+              fetchpriority={index === 0 ? "high" : "auto"}
+              decoding={index === 0 ? "sync" : "async"}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
           </div>
 
           <div className="container mx-auto px-4 h-full relative z-20 flex flex-col justify-end pb-16 lg:pb-24 items-start">
-            <div className="max-w-2xl text-white">
+            <div className={`max-w-2xl text-white transition-all duration-1000 delay-300 ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <span className="inline-block px-3 py-1 bg-[#8CC63F]/90 rounded text-[10px] font-black tracking-widest uppercase mb-3 lg:mb-4">
                 {slide.title}
               </span>
@@ -67,7 +75,7 @@ const Hero: React.FC = () => {
                 <a 
                   href={slide.link}
                   onClick={(e) => scrollToProducts(e, slide.link)}
-                  className="bg-[#4B7947] text-white px-6 py-3 lg:px-10 lg:py-4 rounded-full font-black text-[10px] lg:text-xs uppercase tracking-widest hover:bg-[#8CC63F] transition-all flex items-center gap-3 shadow-2xl cursor-pointer"
+                  className="bg-[#4B7947] text-white px-6 py-3 lg:px-10 lg:py-4 rounded-full font-black text-[10px] lg:text-xs uppercase tracking-widest hover:bg-[#8CC63F] transition-colors flex items-center gap-3 shadow-2xl cursor-pointer"
                 >
                   View Products
                   <i className="fa-solid fa-arrow-right"></i>
@@ -83,6 +91,7 @@ const Hero: React.FC = () => {
           <button 
             key={i}
             onClick={() => setCurrent(i)}
+            aria-label={`Go to slide ${i + 1}`}
             className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 lg:w-12 bg-[#8CC63F]' : 'w-4 bg-white/30'}`}
           />
         ))}

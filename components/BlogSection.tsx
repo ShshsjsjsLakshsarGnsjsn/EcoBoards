@@ -32,16 +32,16 @@ const BlogSection: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {BLOGS.map((blog) => (
-          <div key={blog.id} className="group flex flex-col md:flex-row gap-8 bg-white rounded-[3rem] p-4 border border-slate-100 hover:shadow-2xl transition-all">
-            <div className="md:w-2/5 aspect-[4/3] rounded-[2.5rem] overflow-hidden shrink-0">
-              <img src={blog.img} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="" />
+          <div key={blog.id} className="group flex flex-col md:flex-row gap-8 bg-white rounded-[3rem] p-4 border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
+            <div className="md:w-2/5 aspect-[4/3] rounded-[2.5rem] overflow-hidden shrink-0 will-change-transform">
+              <img src={blog.img} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="" loading="lazy" />
             </div>
             <div className="md:w-3/5 flex flex-col justify-center pr-6">
               <span className="text-[10px] font-black text-[#8cc63f] mb-3 block tracking-widest uppercase">{blog.date}</span>
               <h3 className="text-xl font-bold text-slate-800 mb-6 group-hover:text-[#4b7947] transition-colors">{blog.title}</h3>
               <button 
                 onClick={() => setSelectedBlog(blog)}
-                className="bg-[#f0f4f0] text-[#4b7947] px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest w-max hover:bg-[#4b7947] hover:text-white transition-all"
+                className="bg-[#f0f4f0] text-[#4b7947] px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest w-max hover:bg-[#4b7947] hover:text-white transition-colors"
               >
                 Read Full Story
               </button>
@@ -56,7 +56,7 @@ const BlogSection: React.FC = () => {
           <div className="bg-white w-full max-w-3xl rounded-[3rem] overflow-hidden shadow-2xl relative animate-fadeIn flex flex-col">
             <button 
               onClick={() => setSelectedBlog(null)}
-              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all z-10"
+              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors z-10"
             >
               <i className="fa-solid fa-xmark"></i>
             </button>
@@ -73,7 +73,7 @@ const BlogSection: React.FC = () => {
                  <span className="text-sm font-bold text-[#4b7947]">Ecoboards Factory Editorial</span>
                  <button 
                    onClick={() => setSelectedBlog(null)}
-                   className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#4b7947]"
+                   className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#4b7947] transition-colors"
                  >
                    Back to News
                  </button>

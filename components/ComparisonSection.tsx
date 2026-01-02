@@ -42,15 +42,17 @@ const ComparisonSection: React.FC = () => {
          
          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {brandFeatures.map((brand, idx) => (
-              <div key={idx} className="bg-white p-6 lg:p-12 rounded-[2rem] lg:rounded-[2.5rem] border border-slate-100 shadow-lg hover:shadow-2xl hover:border-[#8cc63f] transition-all group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#f0f4f0] rounded-bl-[100%] -mr-16 -mt-16 transition-all group-hover:bg-[#8cc63f]/20"></div>
+              <div key={idx} className="bg-white p-6 lg:p-12 rounded-[2rem] lg:rounded-[2.5rem] border border-slate-100 shadow-lg hover:shadow-2xl hover:border-[#8cc63f] transition-shadow duration-300 group relative overflow-hidden transform will-change-transform">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#f0f4f0] rounded-bl-[100%] -mr-16 -mt-16 transition-colors group-hover:bg-[#8cc63f]/20"></div>
                 <div className="relative z-10">
-                  <div className="w-14 h-14 lg:w-16 lg:h-16 bg-[#4b7947] rounded-2xl flex items-center justify-center text-white mb-6 lg:mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 lg:w-16 lg:h-16 bg-[#4b7947] rounded-2xl flex items-center justify-center text-white mb-6 lg:mb-8 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <i className={`fa-solid ${brand.icon} text-xl lg:text-2xl`}></i>
                   </div>
                   <h3 className="text-lg lg:text-xl font-black text-slate-800 mb-3 lg:mb-4">{brand.title}</h3>
                   <p className="text-slate-500 text-sm leading-relaxed mb-4 lg:mb-6">{brand.desc}</p>
-                  <div className="h-1 w-12 bg-[#8cc63f] rounded-full group-hover:w-full transition-all duration-500"></div>
+                  
+                  {/* Optimized Animation using Transform ScaleX instead of Width */}
+                  <div className="h-1 w-full bg-[#8cc63f] rounded-full origin-left transform scale-x-[0.15] group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
                 </div>
               </div>
             ))}
@@ -69,7 +71,7 @@ const ComparisonSection: React.FC = () => {
         
         <div className="grid grid-cols-1 gap-4 lg:gap-6 max-w-5xl mx-auto">
           {plyVsWpc.map((item, idx) => (
-            <div key={idx} className="bg-white rounded-[2rem] p-6 lg:p-8 shadow-lg border border-slate-100 flex flex-col lg:flex-row items-center gap-6 lg:gap-12 hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden">
+            <div key={idx} className="bg-white rounded-[2rem] p-6 lg:p-8 shadow-lg border border-slate-100 flex flex-col lg:flex-row items-center gap-6 lg:gap-12 hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden transform will-change-transform">
               {/* Feature Label */}
               <div className="lg:w-1/4 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Feature</span>

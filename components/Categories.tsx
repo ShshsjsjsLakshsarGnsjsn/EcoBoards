@@ -53,12 +53,12 @@ const Categories: React.FC = () => {
               onClick={() => setSelectedInspiration(cat)} 
               className="flex flex-col items-center gap-4 lg:gap-5 group"
             >
-              <div className={`w-20 h-20 lg:w-24 lg:h-24 rounded-[2rem] bg-[#f0f4f0] text-[#4b7947] flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-[#8cc63f] group-hover:text-white shadow-sm hover:shadow-xl`}>
+              <div className={`w-20 h-20 lg:w-24 lg:h-24 rounded-[2rem] bg-[#f0f4f0] text-[#4b7947] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-[#8cc63f] group-hover:text-white shadow-sm hover:shadow-xl`}>
                 <div className="scale-75 lg:scale-100 transform transition-transform">
                   {cat.icon}
                 </div>
               </div>
-              <span className="text-[9px] lg:text-[10px] font-black text-slate-500 group-hover:text-[#4b7947] uppercase tracking-widest">
+              <span className="text-[9px] lg:text-[10px] font-black text-slate-500 group-hover:text-[#4b7947] uppercase tracking-widest transition-colors">
                 {cat.name}
               </span>
             </button>
@@ -68,16 +68,21 @@ const Categories: React.FC = () => {
 
       {/* Inspiration Image Modal */}
       {selectedInspiration && (
-        <div className="fixed inset-0 z-[250] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-all duration-300">
+        <div className="fixed inset-0 z-[250] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-all duration-300">
           <div className="bg-white w-full max-w-5xl rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl relative animate-fadeIn flex flex-col md:flex-row max-h-[85vh] md:max-h-[90vh]">
             <button 
               onClick={() => setSelectedInspiration(null)}
-              className="absolute top-4 right-4 lg:top-6 lg:right-6 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all z-20 shadow-xl"
+              className="absolute top-4 right-4 lg:top-6 lg:right-6 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors z-20 shadow-xl"
             >
               <i className="fa-solid fa-xmark text-lg lg:text-xl"></i>
             </button>
             <div className="md:w-2/3 h-56 md:h-auto overflow-hidden bg-slate-100 shrink-0">
-              <img src={selectedInspiration.img} className="w-full h-full object-cover" alt={selectedInspiration.name} />
+              <img 
+                src={selectedInspiration.img} 
+                className="w-full h-full object-cover" 
+                alt={selectedInspiration.name}
+                loading="lazy"
+              />
             </div>
             <div className="md:w-1/3 p-6 lg:p-14 flex flex-col justify-center bg-white overflow-y-auto">
                <span className="text-[10px] lg:text-xs font-black text-[#8cc63f] uppercase tracking-widest mb-3 lg:mb-4">Eco Inspiration</span>
@@ -88,7 +93,7 @@ const Categories: React.FC = () => {
                <a 
                  href="#shop" 
                  onClick={() => setSelectedInspiration(null)}
-                 className="bg-[#4b7947] text-white py-3 lg:py-4 rounded-xl lg:rounded-2xl font-black uppercase tracking-widest text-center text-[10px] lg:text-xs hover:bg-[#8cc63f] transition-all"
+                 className="bg-[#4b7947] text-white py-3 lg:py-4 rounded-xl lg:rounded-2xl font-black uppercase tracking-widest text-center text-[10px] lg:text-xs hover:bg-[#8cc63f] transition-colors"
                >
                  See Products Used
                </a>

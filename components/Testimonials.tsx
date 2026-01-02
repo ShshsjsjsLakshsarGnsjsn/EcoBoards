@@ -35,12 +35,12 @@ const Testimonials: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         {TESTIMONIALS.map((t) => (
-          <div key={t.id} className="bg-white p-6 lg:p-10 rounded-[2.5rem] lg:rounded-[40px] shadow-xl shadow-slate-200/50 relative border border-slate-50 flex flex-col h-full">
+          <div key={t.id} className="bg-white p-6 lg:p-10 rounded-[2.5rem] lg:rounded-[40px] shadow-xl shadow-slate-200/50 relative border border-slate-50 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300">
             <i className="fa-solid fa-quote-left absolute top-6 left-6 lg:top-8 lg:left-8 text-slate-100 text-5xl lg:text-6xl"></i>
             <div className="relative z-10 flex flex-col h-full justify-between">
               <p className="text-slate-600 italic leading-relaxed mb-6 lg:mb-8 text-sm lg:text-base">"{t.content}"</p>
               <div className="flex flex-col items-center">
-                <img src={t.image} alt={t.name} className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border-4 border-slate-50 mb-4 object-cover shadow-md" />
+                <img src={t.image} alt={t.name} className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border-4 border-slate-50 mb-4 object-cover shadow-md" loading="lazy" />
                 <h4 className="font-bold text-slate-800 uppercase tracking-wide text-sm lg:text-base">{t.name}</h4>
                 <span className="text-xs text-[#d4a373] font-bold">{t.role}</span>
               </div>

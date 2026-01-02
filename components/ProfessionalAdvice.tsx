@@ -46,8 +46,8 @@ const ProfessionalAdvice: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {FEATURES.map((feature, index) => (
-          <div key={index} className="bg-white p-8 lg:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#8cc63f] transition-all group text-center hover:-translate-y-2 duration-300">
-            <div className="w-16 h-16 lg:w-20 lg:h-20 mx-auto bg-[#f0f4f0] rounded-full flex items-center justify-center text-[#4b7947] group-hover:bg-[#4b7947] group-hover:text-white transition-all mb-4 lg:mb-6 shadow-inner">
+          <div key={index} className="bg-white p-8 lg:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#8cc63f] transition-all duration-300 group text-center hover:-translate-y-2 will-change-transform">
+            <div className="w-16 h-16 lg:w-20 lg:h-20 mx-auto bg-[#f0f4f0] rounded-full flex items-center justify-center text-[#4b7947] group-hover:bg-[#4b7947] group-hover:text-white transition-colors duration-300 mb-4 lg:mb-6 shadow-inner">
               {feature.icon}
             </div>
             <h3 className="text-lg lg:text-xl font-black text-slate-800 mb-3 lg:mb-4 group-hover:text-[#4b7947] transition-colors">{feature.title}</h3>
