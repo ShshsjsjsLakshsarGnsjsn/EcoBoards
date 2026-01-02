@@ -28,20 +28,20 @@ const TESTIMONIALS = [
 const Testimonials: React.FC = () => {
   return (
     <div className="container mx-auto px-4 text-center">
-      <div className="mb-16">
+      <div className="mb-10 lg:mb-16">
         <h2 className="text-3xl lg:text-4xl font-black text-[#1b4332] mb-4">Building Trust Together</h2>
         <p className="text-slate-400 font-bold uppercase tracking-widest text-xs">What Our Partners & Customers Say</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         {TESTIMONIALS.map((t) => (
-          <div key={t.id} className="bg-white p-10 rounded-[40px] shadow-xl shadow-slate-200/50 relative border border-slate-50 flex flex-col h-full">
-            <i className="fa-solid fa-quote-left absolute top-8 left-8 text-slate-100 text-6xl"></i>
+          <div key={t.id} className="bg-white p-6 lg:p-10 rounded-[2.5rem] lg:rounded-[40px] shadow-xl shadow-slate-200/50 relative border border-slate-50 flex flex-col h-full">
+            <i className="fa-solid fa-quote-left absolute top-6 left-6 lg:top-8 lg:left-8 text-slate-100 text-5xl lg:text-6xl"></i>
             <div className="relative z-10 flex flex-col h-full justify-between">
-              <p className="text-slate-600 italic leading-relaxed mb-8">"{t.content}"</p>
+              <p className="text-slate-600 italic leading-relaxed mb-6 lg:mb-8 text-sm lg:text-base">"{t.content}"</p>
               <div className="flex flex-col items-center">
-                <img src={t.image} alt={t.name} className="w-20 h-20 rounded-full border-4 border-slate-50 mb-4 object-cover shadow-md" />
-                <h4 className="font-bold text-slate-800 uppercase tracking-wide">{t.name}</h4>
+                <img src={t.image} alt={t.name} className="w-16 h-16 lg:w-20 lg:h-20 rounded-full border-4 border-slate-50 mb-4 object-cover shadow-md" />
+                <h4 className="font-bold text-slate-800 uppercase tracking-wide text-sm lg:text-base">{t.name}</h4>
                 <span className="text-xs text-[#d4a373] font-bold">{t.role}</span>
               </div>
             </div>

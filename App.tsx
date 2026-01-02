@@ -34,27 +34,27 @@ const App: React.FC = () => {
           <Categories />
         </section>
 
-        <section id="shop" className="py-16 bg-slate-50">
+        <section id="shop" className="py-10 lg:py-16 bg-slate-50">
           <ProductShowcase />
         </section>
 
-        <section id="services" className="py-16 bg-white border-b border-slate-50">
+        <section id="services" className="py-10 lg:py-16 bg-white border-b border-slate-50">
           <ProfessionalAdvice />
         </section>
 
-        <section className="py-16 bg-slate-50">
+        <section className="py-10 lg:py-16 bg-slate-50">
           <ComparisonSection />
         </section>
 
-        <section id="tools" className="py-16 bg-white">
+        <section id="tools" className="py-10 lg:py-16 bg-white">
           <ToolsSection />
         </section>
 
-        <section id="blog" className="py-16 bg-slate-50">
+        <section id="blog" className="py-10 lg:py-16 bg-slate-50">
           <BlogSection />
         </section>
 
-        <section id="testimonials" className="py-16 bg-white">
+        <section id="testimonials" className="py-10 lg:py-16 bg-white">
           <Testimonials />
         </section>
       </main>

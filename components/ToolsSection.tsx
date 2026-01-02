@@ -15,10 +15,10 @@ const ToolsSection: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="max-w-4xl mx-auto bg-white rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 flex flex-col md:flex-row">
-        <div className="md:w-1/2 bg-[#4b7947] p-10 lg:p-14 text-white">
+      <div className="max-w-4xl mx-auto bg-white rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 flex flex-col md:flex-row">
+        <div className="md:w-1/2 bg-[#4b7947] p-6 lg:p-14 text-white">
           <span className="text-[10px] font-black uppercase tracking-widest text-[#8cc63f] mb-4 block">Functional Tool</span>
-          <h2 className="text-3xl font-black mb-6">WPC Board Calculator</h2>
+          <h2 className="text-2xl lg:text-3xl font-black mb-6">WPC Board Calculator</h2>
           <p className="text-slate-100 text-sm mb-8 leading-relaxed">
             Estimate the number of standard 8ft x 4ft boards required for your project area.
           </p>
@@ -41,11 +41,11 @@ const ToolsSection: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="md:w-1/2 p-10 lg:p-14 flex flex-col justify-center items-center text-center bg-[#f8faf8]">
+        <div className="md:w-1/2 p-6 lg:p-14 flex flex-col justify-center items-center text-center bg-[#f8faf8]">
           {result !== null ? (
             <div className="animate-fadeIn">
               <div className="text-slate-400 font-bold uppercase text-[10px] tracking-widest mb-2">Estimated Requirement</div>
-              <div className="text-7xl font-black text-[#4b7947] mb-2">{result}</div>
+              <div className="text-6xl lg:text-7xl font-black text-[#4b7947] mb-2">{result}</div>
               <div className="text-lg font-bold text-slate-700 mb-8">Standard Boards</div>
               <p className="text-xs text-slate-400 max-w-xs mx-auto">
                 *Calculation based on 32 sq.ft. per board. We recommend adding 10% for cutting waste.

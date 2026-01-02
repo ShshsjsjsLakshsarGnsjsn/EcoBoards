@@ -37,20 +37,20 @@ const FEATURES = [
 const ProfessionalAdvice: React.FC = () => {
   return (
     <div className="container mx-auto px-4">
-      <div className="max-w-4xl mx-auto text-center mb-16">
+      <div className="max-w-4xl mx-auto text-center mb-10 lg:mb-16">
         <h2 className="text-3xl lg:text-5xl font-black text-[#4b7947] mb-6">Why Choose Ecoboards?</h2>
         <p className="text-slate-500 font-medium text-lg">
           Superior engineering meets sustainable innovation.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {FEATURES.map((feature, index) => (
           <div key={index} className="bg-white p-8 lg:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#8cc63f] transition-all group text-center hover:-translate-y-2 duration-300">
-            <div className="w-20 h-20 mx-auto bg-[#f0f4f0] rounded-full flex items-center justify-center text-[#4b7947] group-hover:bg-[#4b7947] group-hover:text-white transition-all mb-6 shadow-inner">
+            <div className="w-16 h-16 lg:w-20 lg:h-20 mx-auto bg-[#f0f4f0] rounded-full flex items-center justify-center text-[#4b7947] group-hover:bg-[#4b7947] group-hover:text-white transition-all mb-4 lg:mb-6 shadow-inner">
               {feature.icon}
             </div>
-            <h3 className="text-xl font-black text-slate-800 mb-4 group-hover:text-[#4b7947] transition-colors">{feature.title}</h3>
+            <h3 className="text-lg lg:text-xl font-black text-slate-800 mb-3 lg:mb-4 group-hover:text-[#4b7947] transition-colors">{feature.title}</h3>
             <p className="text-slate-500 text-sm leading-relaxed">
               {feature.desc}
             </p>

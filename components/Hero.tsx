@@ -52,22 +52,22 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
           </div>
 
-          <div className="container mx-auto px-4 h-full relative z-20 flex flex-col justify-end pb-24 items-start">
+          <div className="container mx-auto px-4 h-full relative z-20 flex flex-col justify-end pb-16 lg:pb-24 items-start">
             <div className="max-w-2xl text-white">
-              <span className="inline-block px-3 py-1 bg-[#8CC63F]/90 rounded text-[10px] font-black tracking-widest uppercase mb-4">
+              <span className="inline-block px-3 py-1 bg-[#8CC63F]/90 rounded text-[10px] font-black tracking-widest uppercase mb-3 lg:mb-4">
                 {slide.title}
               </span>
-              <h1 className="text-4xl lg:text-7xl font-extrabold leading-tight mb-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-7xl font-extrabold leading-tight mb-3 lg:mb-4">
                 {slide.subtitle}
               </h1>
-              <p className="text-lg text-slate-300 mb-8 max-w-lg leading-relaxed">
+              <p className="text-base lg:text-lg text-slate-300 mb-6 lg:mb-8 max-w-lg leading-relaxed">
                 {slide.desc}
               </p>
               <div className="flex gap-4">
                 <a 
                   href={slide.link}
                   onClick={(e) => scrollToProducts(e, slide.link)}
-                  className="bg-[#4B7947] text-white px-10 py-4 rounded-full font-black text-xs uppercase tracking-widest hover:bg-[#8CC63F] transition-all flex items-center gap-3 shadow-2xl cursor-pointer"
+                  className="bg-[#4B7947] text-white px-6 py-3 lg:px-10 lg:py-4 rounded-full font-black text-[10px] lg:text-xs uppercase tracking-widest hover:bg-[#8CC63F] transition-all flex items-center gap-3 shadow-2xl cursor-pointer"
                 >
                   View Products
                   <i className="fa-solid fa-arrow-right"></i>
@@ -78,12 +78,12 @@ const Hero: React.FC = () => {
         </div>
       ))}
 
-      <div className="absolute bottom-10 right-10 z-30 flex gap-3">
+      <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-10 z-30 flex gap-3">
         {HERO_SLIDES.map((_, i) => (
           <button 
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-12 bg-[#8CC63F]' : 'w-4 bg-white/30'}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 lg:w-12 bg-[#8CC63F]' : 'w-4 bg-white/30'}`}
           />
         ))}
       </div>
