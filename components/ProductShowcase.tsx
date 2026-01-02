@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-const CATEGORIES = ['All', 'Boards', 'Doors', 'Louvers', 'Jali'];
+const CATEGORIES = ['All', 'Boards', 'Doors', 'Door Frames', 'Louvers', 'Jali'];
 
 const PRODUCTS = [
   { 
@@ -31,6 +31,13 @@ const PRODUCTS = [
     cat: 'Doors', 
     tag: 'Luxury', 
     img: 'https://i.pinimg.com/736x/f0/ac/43/f0ac43546ad3e9009360d994e939ce22.jpg' 
+  },
+  { 
+    id: '7', 
+    title: 'Solid WPC Door Frame', 
+    cat: 'Door Frames', 
+    tag: 'Termite Proof', 
+    img: 'https://i.pinimg.com/736x/1a/87/17/1a8717cfb845f93507f7407bf429995c.jpg' 
   },
 ];
 
